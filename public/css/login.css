@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'Poppins'; 
+    src: url('../../Poppins-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'NotoSerifThai'; 
+    src: url('../../NotoSerifThai_Condensed-Regular.ttf') format('truetype');
+  }
+    @font-face {
+        font-family: 'NotoSerifTelugu'; 
+        src: url('../../NotoSerifTelugu-Regular.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'NotoSerifThaiReg'; 
+        src: url('../../NotoSerifThai_SemiCondensed-Regular.ttf') format('truetype');
+    }
+  .input-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.icon_e-mail {
+    position: absolute;
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+    width: 20px; 
+    height: 15px;
+   
+}
+.icon_lock {
+    position: absolute;
+    left: 12px; 
+    top: 50%; 
+    transform: translateY(-50%);
+    width: 15px;
+    height: 20px;
+}
+input, button {
+    border-radius: 1em;
+    /*height: 5.6rem;
+    width: 90vw;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;*/
+    width: 317px;
+    height: 56px;
+    /*flex-shrink: 0;
+    border: unset;*/
+    border-radius: 0.75rem;
+    border: 1px solid #E4DFDF;
+    
+    background: #FFF;
+   }
+   input {
+    padding-left: 40px;
+   }
+   button {
+    /*box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    background-color: beige;*/
+    /*flex-shrink: 0;*/
+    background-color: #30B374;
+    filter: drop-shadow(0px 10px 35px rgba(111, 126, 201, 0.25));
+    /*filter: drop-shadow(0px 10px 35px rgba(111, 126, 201, 0.25));
+    font-size: 1.5rem;*/
+    color: #FFF;
+    text-align: center;
+    font-family: 'NotoSerifThaiReg';
+    font-size: 16px;
+    font-style: normal;
+    /*font-weight: 500;*/
+    line-height: normal;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+   }
+   form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+   }
+   .login-container {
+    background-color: #ffffff;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .title {
+    color: #000;
+    text-align: center;
+    font-family: 'Poppins'; 
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+    .e-mail {
+    color: #747688;
+    font-family: 'NotoSerifThaiReg';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    padding-left: 20px;
+    }
+    .password {
+    color: #747688;
+    font-family: 'NotoSerifThaiReg';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    }
+
+    .input-container .icon {
+        background-size: contain;
+        background-position: center;
+    }
+
+   body.login {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   }
+   .SignUp, .SignUpLink, .RememberMe {   
+    /*width: 240px;
+    height: 15px;*/
+    color: #120D26;
+    text-align: center;
+    font-family: 'NotoSerifTelugu';
+    /*font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; 
+    
+    letter-spacing: 1px;
+     Dodaj inne style według potrzeb 
+    display: flex;*/
+    width: 240px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+ /*
+    flex-direction: column;
+    justify-content: center;
+   
+    color: #120D26;
+    text-align: center;
+    font-family: Noto Serif Thai;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;*/
+}
+
+
+.SignUpLink {
+    color: #30B374;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+   @media (max-width: 600px) {
+    .login-container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    }
+   }
