@@ -18,3 +18,15 @@ services:
       dockerfile: docker/php/Dockerfile
     volumes:
       - .:/app/
+  # db:
+  #   image: db
+  #   container_name: event_db
+  #   build:
+  #     context: .
+  #     dockerfile: ./db/Dockerfile
+  #   environment:
+  #     - POSTGRES_USER=root
+  #     - POSTGRES_PASSWORD=root
+  #     - POSTGRES_DB=event
+  #   ports:
+  #     - 5433:5432

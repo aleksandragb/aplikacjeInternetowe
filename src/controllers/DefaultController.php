@@ -1,13 +1,14 @@
 <?php
 require_once 'AppController.php';
-require_once __DIR__.'/../models/Dog.php';
+//require_once __DIR__.'/../models/Dog.php';
 
 class DefaultController extends AppController{
-    function login(){
+    function index(){
         //include __DIR__'src/views/login.html';
         $this->render("login");
 
     }
+    /*
     function dashboard(){
         //include __DIR__'src/views/dashboard.html';
 
@@ -20,5 +21,5 @@ class DefaultController extends AppController{
             new Dog("Ruddy", 3, "Husky")
         ];
         $this->render("dashboard", ["title" =>$title, "dogs" =>$dogs]);
-    }
+    }*/
 }
