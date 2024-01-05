@@ -8,6 +8,10 @@ class DefaultController extends AppController{
         $this->render("login");
 
     }
+    public function home()
+    {
+        $this->render('home');
+    }
     /*
     function dashboard(){
         //include __DIR__'src/views/dashboard.html';

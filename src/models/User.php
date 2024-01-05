@@ -6,15 +6,14 @@ class User
     private $password;
     private $name;
     private $surname;
-    private $phone;
 
-    public function __construct(string $email, string $password, string $name, string $surname, string $avatar)
+    public function __construct(string $email, string $password, string $name, string $surname)
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
-        $this->avatar = $avatar;
+
     }
 
     public function getEmail(): string
@@ -56,71 +55,24 @@ class User
     {
         $this->surname = $surname;
     }
-    
-    public function getAvatar(): string
+
+    public function isAdmin(): bool
     {
-        return $this->avatar;
+        return $this->admin;
     }
 
-    public function setAvatar(string $avatar): void
+    public function setAdmin(bool $admin): void
     {
-        $this->avatar = $avatar;
+        $this->admin = $admin;
     }
 
-    public function updateProfile(array $newData) {
-        if (empty($newData)) {
-            return;
-        }
-    
-        foreach ($newData as $key => $value) {
-            switch ($key) {
-                case 'email':
-                    $this->setEmail($value);
-                    break;
-                case 'password':
-                    $this->setPassword($value);
-                    break;
-                case 'name':
-                    $this->setName($value);
-                    break;
-                case 'surname':
-                    $this->setSurname($value);
-                    break;
-                case 'avatar':
-                    $this->setAvatar($value);
-                    break;
-            }
-        }
-    
-        $this->updateDatabase();
+    public function getUserID(): int
+    {
+        return $this->userID;
     }
 
-    private function updateDatabase()
+    public function setUserID(int $userID): void
     {
-        try {
-            $conn = new PDO(
-                "pgsql:host=$yourHost;port=5432;dbname=$yourDatabase",
-                $yourUsername,
-                $yourPassword,
-                ["sslmode"  => "prefer"]
-            );
-
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $sql = "UPDATE users SET email = :email, password = :password, name = :name, surname = :surname, avatar = :avatar WHERE email = :currentEmail";
-            $stmt = $conn->prepare($sql);
-
-            $stmt->bindParam(':email', $this->email);
-            $stmt->bindParam(':password', $this->password);
-            $stmt->bindParam(':name', $this->name);
-            $stmt->bindParam(':surname', $this->surname);
-            $stmt->bindParam(':avatar', $this->avatar);
-            $stmt->bindParam(':currentEmail', $this->email); 
-
-            $stmt->execute();
-            
-        } catch (PDOException $e) {
-            die("Database update failed: " . $e->getMessage());
-        }
+        $this->userID = $userID;
     }
 }
